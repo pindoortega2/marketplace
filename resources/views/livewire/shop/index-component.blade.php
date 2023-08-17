@@ -8,7 +8,8 @@
                     <p class="card-text">{{$item->descripcion}}</p>
                 </div>
 
-                <button wire:click="add_to_cart({{$item->id}})" type="button" class="btn btn-primary">Agregar al Carrito. juego de ramas</button>            
+                <button wire:click="add_to_cart({{$item->id}})" type="button" class="btn btn-primary">Agregar al Carrito. juego de ramas</button> 
+                <button wire:click="add_to_cart({{$item->id}})" type="button" class="btn btn-primary">PRUEBA 1</button> 
 
             </div>
         @endforeach
