@@ -3,7 +3,8 @@
     <div class="container">
 
         <h3 class="mt-4">Registra tu tienda ahora</h1>
-
+            <h3 class="mt-4">Registra tu tienda ahora</h1>
+                
         <div class="form-group">
 
             <label for="">Nombre</label>
