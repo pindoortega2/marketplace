@@ -13,7 +13,13 @@ class ProductSeeder extends Seeder {
      */
     public function run() {
 
-        Product::factory()->count(100)->create();
+        Product::factory()->count(30)->create([
+            'shop_id' => 1,            
+        ]);
         
+        Product::factory()->count(20)->create([
+            'shop_id' => 2,            
+        ]);
+
     }
 }

@@ -31,7 +31,7 @@ class ShopObserver
         if ($shop->getOriginal('is_active') == false && $shop->is_active == true) {
 
             Mail::to($shop->owner)->send(new MailShopActivated($shop));
-            $shop->owner()->setRole('seller'); //este còdigo me trae de la relaciòn que esta en el modelo user (owner)
+            $shop->owner()->setRole('seller'); //este còdigo me trae de la relaciòn que esta en el modelo user (owner), y a este usuario le camia de roll a vendedor
 
         }
 

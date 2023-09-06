@@ -19,8 +19,7 @@ class IndexComponent extends Component {
     public function update_quantity($itemid, $quantity) { 
         //dd($itemid, $quantity);
         \Cart::session(auth()->id())->update($itemid,[
-            'quantity' => $quantity
-                 
+            'quantity' => $quantity                 
         ]);
 
     }

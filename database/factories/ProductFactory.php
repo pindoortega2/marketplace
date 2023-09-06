@@ -11,10 +11,11 @@ class ProductFactory extends Factory {
      * @return array
      */
     public function definition() {
-        return [
+        return [            
             'nombre' => $this->faker->sentence(2),
             'descripcion' => $this->faker->sentence(20),
             'precio' => $this->faker->numberBetween(100, 2000),                       
+            'category_id' => rand(1,2),
         ];
     }
 }

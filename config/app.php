@@ -233,6 +233,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
 
     ],
 

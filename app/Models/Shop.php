@@ -9,10 +9,14 @@ class Shop extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'is_active'];
+    protected $fillable = ['name', 'description', 'is_active', 'rating', 'user_id'];
 
     public function owner() {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function products(){
+        return $this->hasMany(Product::class, 'shop_id');
     }
 
 }

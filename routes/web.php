@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\PaypalController;
+use App\Http\Controllers\ShopController;
 use App\Http\Livewire\Shop\Cart\IndexComponent as CartIndexComponent;
 use App\Http\Livewire\Shop\CheckoutComponent;
 use App\Http\Livewire\Shop\IndexComponent;
+use App\Http\Livewire\Shop\SingleProduct;
 use App\Http\Livewire\Shop\RegisterComponent;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +27,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', IndexComponent::class)->name('shop-index');
 
+Route::get('/', function () {
+    return view('front.index');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+Route::get('/products', [ShopController::class, 'allProducts'])->name('all.products');
+Route::get('/{product}', SingleProduct::class)->name('single-product');
+
 Route::get('/cart', CartIndexComponent::class)->name('cart');
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 
@@ -38,6 +52,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+
